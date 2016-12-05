@@ -9,4 +9,5 @@ import java.util.List;
 public interface StudentDAO {
     public List<Student> getList();
     public void add(Student s);
+    public Student getItem(int ID);
 }

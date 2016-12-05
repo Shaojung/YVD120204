@@ -25,4 +25,9 @@ public class StudentDAOMemoryImpl implements StudentDAO {
     public void add(Student s) {
         data.add(s);
     }
+
+    @Override
+    public Student getItem(int ID) {
+        return null;
+    }
 }

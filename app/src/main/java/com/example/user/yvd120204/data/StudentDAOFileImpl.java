@@ -45,6 +45,17 @@ public class StudentDAOFileImpl implements StudentDAO {
         Gson gson = new Gson();
         writeFile(gson.toJson(data, new TypeToken<ArrayList<Student>>(){}.getType()));
     }
+    @Override
+    public Student getItem(int ID) {
+        for (Student s : data)
+        {
+            if (s.ID == ID)
+            {
+                return s;
+            }
+        }
+        return null;
+    }
 
     public String readData()
     {
