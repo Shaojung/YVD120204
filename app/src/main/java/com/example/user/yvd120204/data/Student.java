@@ -6,9 +6,9 @@ package com.example.user.yvd120204.data;
 
 public class Student {
     public int ID;
-    String name;
-    String tel;
-    String addr;
+    public String name;
+    public String tel;
+    public String addr;
 
     public Student(int i, String n, String t, String a)
     {
