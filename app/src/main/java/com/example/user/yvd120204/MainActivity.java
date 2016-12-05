@@ -23,10 +23,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         lv = (ListView) findViewById(R.id.listView);
         data = new ArrayList<>();
-        StudentDAO dao = new StudentDAOMemoryImpl();
-        dao.add(new Student(1, "Bob", "123", "aa123"));
-        dao.add(new Student(2, "Mary", "345", "bb345"));
-        List<Student> lst = dao.getList();
+        MyApplication app = (MyApplication) getApplication();
+        app.dao = new StudentDAOMemoryImpl();
+        app.dao.add(new Student(1, "Bob", "123", "aa123"));
+        app.dao.add(new Student(2, "Mary", "345", "bb345"));
+        List<Student> lst = app.dao.getList();
         for (Student s : lst)
         {
             Log.d("DATA", s.toString());
