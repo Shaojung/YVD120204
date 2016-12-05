@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -34,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, data);
         lv.setAdapter(adapter);
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                List<Student> lst = app.dao.getList();
+                Student s = lst.get(position);
+                Intent it = new Intent(MainActivity.this, DetailActivity.class);
+                it.putExtra("ID", s.ID);
+                startActivity(it);
+            }
+        });
     }
 
     @Override

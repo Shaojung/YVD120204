@@ -5,7 +5,7 @@ package com.example.user.yvd120204.data;
  */
 
 public class Student {
-    int ID;
+    public int ID;
     String name;
     String tel;
     String addr;
