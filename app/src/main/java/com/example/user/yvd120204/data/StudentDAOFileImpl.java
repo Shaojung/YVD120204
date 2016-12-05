@@ -8,10 +8,14 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by user on 2016/12/2.
@@ -37,7 +41,9 @@ public class StudentDAOFileImpl implements StudentDAO {
 
     @Override
     public void add(Student s) {
-
+        data.add(s);
+        Gson gson = new Gson();
+        writeFile(gson.toJson(data, new TypeToken<List<Student>>(){}.getType()));
     }
 
     public String readData()
@@ -59,5 +65,22 @@ public class StudentDAOFileImpl implements StudentDAO {
         }
         Log.d("READFILE", sb.toString());
         return sb.toString();
+    }
+
+    public void writeFile(String s)
+    {
+        FileOutputStream fOut = null;
+        try {
+
+            fOut = context.openFileOutput("mydata.txt", MODE_PRIVATE);
+            OutputStreamWriter osw = new OutputStreamWriter(fOut);  // 寫入資料
+            osw.write(s);
+            osw.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
