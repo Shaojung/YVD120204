@@ -31,5 +31,9 @@ public class DetailActivity extends AppCompatActivity {
     {
         finish();
     }
-
+    public void clickDelete(View v)
+    {
+        app.dao.delete(Integer.valueOf(tv1.getText().toString()));
+        finish();
+    }
 }
