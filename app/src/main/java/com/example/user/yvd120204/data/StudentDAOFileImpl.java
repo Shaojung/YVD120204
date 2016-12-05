@@ -28,14 +28,14 @@ public class StudentDAOFileImpl implements StudentDAO {
     public StudentDAOFileImpl(Context context)
     {
         this.context = context;
-        data = new ArrayList<>();
+        data = getList();
     }
     @Override
-    public List<Student> getList() {
+    public ArrayList<Student> getList() {
         Gson gson = new Gson();
         String filedata = readData();
 
-        data = gson.fromJson(filedata, new TypeToken<List<Student>>(){}.getType());
+        data = gson.fromJson(filedata, new TypeToken<ArrayList<Student>>(){}.getType());
         return data;
     }
 
@@ -43,7 +43,7 @@ public class StudentDAOFileImpl implements StudentDAO {
     public void add(Student s) {
         data.add(s);
         Gson gson = new Gson();
-        writeFile(gson.toJson(data, new TypeToken<List<Student>>(){}.getType()));
+        writeFile(gson.toJson(data, new TypeToken<ArrayList<Student>>(){}.getType()));
     }
 
     public String readData()

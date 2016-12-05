@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         data = new ArrayList<>();
         app = (MyApplication) getApplication();
         app.dao = new StudentDAOFileImpl(MainActivity.this);
-        app.dao.add(new Student(1, "Bob", "123", "aa123"));
-        app.dao.add(new Student(2, "Mary", "345", "bb345"));
         adapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, data);
         lv.setAdapter(adapter);
