@@ -1,6 +1,7 @@
 package com.example.user.yvd120204;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,6 +53,14 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
         builder.show();
-
+    }
+    public void clickEdit(View v)
+    {
+        Intent it = new Intent(DetailActivity.this, EditActivity.class);
+        it.putExtra("ID", tv1.getText().toString());
+        it.putExtra("name", tv2.getText().toString());
+        it.putExtra("tel", tv3.getText().toString());
+        it.putExtra("addr", tv4.getText().toString());
+        startActivity(it);
     }
 }

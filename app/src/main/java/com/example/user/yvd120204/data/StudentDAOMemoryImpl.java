@@ -35,4 +35,8 @@ public class StudentDAOMemoryImpl implements StudentDAO {
     public void delete(int ID) {
 
     }
+    @Override
+    public void update(Student s) {
+
+    }
 }

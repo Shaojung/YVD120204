@@ -11,4 +11,5 @@ public interface StudentDAO {
     public void add(Student s);
     public Student getItem(int ID);
     public void delete(int ID);
+    public void update(Student s);
 }
