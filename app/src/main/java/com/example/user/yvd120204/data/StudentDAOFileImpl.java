@@ -61,6 +61,11 @@ public class StudentDAOFileImpl implements StudentDAO {
         return null;
     }
 
+    @Override
+    public void delete(int ID) {
+
+    }
+
     public String readData()
     {
         char[] buffer = new char[1];

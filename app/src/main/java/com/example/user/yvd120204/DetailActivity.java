@@ -2,6 +2,7 @@ package com.example.user.yvd120204;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.user.yvd120204.data.Student;
@@ -24,7 +25,11 @@ public class DetailActivity extends AppCompatActivity {
         tv2.setText(s.name);
         tv3.setText(s.tel);
         tv4.setText(s.addr);
-
-
     }
+
+    public void clickBack(View v)
+    {
+        finish();
+    }
+
 }

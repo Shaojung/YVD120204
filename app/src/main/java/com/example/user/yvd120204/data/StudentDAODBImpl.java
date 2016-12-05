@@ -21,4 +21,8 @@ public class StudentDAODBImpl implements StudentDAO {
     public Student getItem(int ID) {
         return null;
     }
+    @Override
+    public void delete(int ID) {
+
+    }
 }

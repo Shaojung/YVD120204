@@ -30,4 +30,9 @@ public class StudentDAOMemoryImpl implements StudentDAO {
     public Student getItem(int ID) {
         return null;
     }
+
+    @Override
+    public void delete(int ID) {
+
+    }
 }
