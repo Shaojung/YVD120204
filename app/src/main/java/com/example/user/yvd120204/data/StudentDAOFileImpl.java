@@ -36,6 +36,10 @@ public class StudentDAOFileImpl implements StudentDAO {
         String filedata = readData();
 
         data = gson.fromJson(filedata, new TypeToken<ArrayList<Student>>(){}.getType());
+        if (data == null)
+        {
+            data = new ArrayList<>();
+        }
         return data;
     }
 
