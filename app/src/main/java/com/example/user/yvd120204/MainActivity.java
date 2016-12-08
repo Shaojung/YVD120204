@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import com.example.user.yvd120204.data.Student;
 import com.example.user.yvd120204.data.StudentDAO;
+import com.example.user.yvd120204.data.StudentDAODBImpl;
 import com.example.user.yvd120204.data.StudentDAOFileImpl;
 import com.example.user.yvd120204.data.StudentDAOMemoryImpl;
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.listView);
         data = new ArrayList<>();
         app = (MyApplication) getApplication();
-        app.dao = new StudentDAOFileImpl(MainActivity.this);
+        app.dao = new StudentDAODBImpl(MainActivity.this);
         adapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, data);
         lv.setAdapter(adapter);
