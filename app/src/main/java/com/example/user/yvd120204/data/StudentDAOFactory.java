@@ -7,15 +7,15 @@ import android.content.Context;
  */
 
 public class StudentDAOFactory {
-    public static StudentDAO getStudentDAO(Context context, int type)
+    public static StudentDAO getStudentDAO(Context context, DAOSource s)
     {
-        switch (type)
+        switch (s)
         {
-            case 0:
+            case MEMORY:
                 return new StudentDAOMemoryImpl();
-            case 1:
+            case FILE:
                 return new StudentDAOFileImpl(context);
-            case 2:
+            case DB:
                 return new StudentDAODBImpl(context);
         }
         return null;

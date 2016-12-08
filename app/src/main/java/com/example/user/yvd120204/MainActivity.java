@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.user.yvd120204.data.DAOSource;
 import com.example.user.yvd120204.data.Student;
 import com.example.user.yvd120204.data.StudentDAO;
 import com.example.user.yvd120204.data.StudentDAODBImpl;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.listView);
         data = new ArrayList<>();
         app = (MyApplication) getApplication();
-        app.dao = StudentDAOFactory.getStudentDAO(MainActivity.this, 2);
+        app.dao = StudentDAOFactory.getStudentDAO(MainActivity.this, DAOSource.DB);
         adapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, data);
         lv.setAdapter(adapter);
