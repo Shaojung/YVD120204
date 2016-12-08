@@ -49,11 +49,18 @@ public class StudentDAODBImpl implements StudentDAO {
 
     @Override
     public Student getItem(int ID) {
-        return null;
+        Cursor c = db.query("phone", new String[] {"ID", "SName", "tel", "addr"},
+                "ID=?",new String[] {String.valueOf(ID)},null,null,null);
+        Student rt = null;
+        if (c.moveToFirst())
+        {
+            rt = new Student(c.getInt(0), c.getString(1), c.getString(2), c.getString(3));
+        }
+        return rt;
     }
     @Override
     public void delete(int ID) {
-
+        db.delete("phone","ID=?",new String[] {String.valueOf(ID)});
     }
     @Override
     public void update(Student s) {
