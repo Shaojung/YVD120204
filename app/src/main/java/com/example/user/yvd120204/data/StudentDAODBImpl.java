@@ -64,6 +64,10 @@ public class StudentDAODBImpl implements StudentDAO {
     }
     @Override
     public void update(Student s) {
-
+        ContentValues cv = new ContentValues();
+        cv.put("SName", s.name);
+        cv.put("tel", s.tel);
+        cv.put("addr", s.addr);
+        db.update("phone", cv, "ID=?", new String[] {String.valueOf(s.ID)});
     }
 }
