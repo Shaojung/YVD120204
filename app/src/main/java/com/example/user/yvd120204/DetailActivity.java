@@ -22,7 +22,6 @@ public class DetailActivity extends AppCompatActivity {
         tv3 = (TextView) findViewById(R.id.textView3);
         tv4 = (TextView) findViewById(R.id.textView4);
         app = (MyApplication) getApplication();
-
     }
 
     @Override
